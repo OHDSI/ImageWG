@@ -1,0 +1,14 @@
+name: "Medical Image Work Group"
+output_dir: "../docs"
+output:
+  html_document:
+    theme: cosmo
+    css: style.css
+    includes:
+      in_header: "favicon.html"
+exclude: ["extras"]
+navbar:
+  title: '<div> Medical Image WG </div>'
+  right:
+    - icon: fa-github
+      href: https://github.com/OHDSI/ImageWG
