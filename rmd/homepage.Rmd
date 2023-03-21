@@ -1,0 +1,32 @@
+---
+title: '<div><img src="images/ohdsi40x40.png"></img> OHDSI Medical Imaging WG </div>'
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+## **Mission**
+
+The OHDSI Image Working Group aims to provide a foundation for representing medical imaging data within the OMOP CDM
+
+---
+
+## **Get Involved**
+
+We communicate and coordinate through the OHDSI MS Teams environment and Github. 
+
+**MS Teams**
+
+To join the MS Teams environment you need to complete two steps:
+
+| # | task | link | 
+|:-|:-|:-|
+| 1 | Sign up for an OHDSI Teams Account | [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lAAPoyCRq0q6TOVQkCOy1ZyG6Ud_r2tKuS0HcGnqiQZUQ05MOU9BSzEwOThZVjNQVVFGTDNZRENONiQlQCN0PWcu)|
+| 2 | Register for the workgroup by filling out the specified form selecting the tickbox for "Image" - which will automatically add you to our channel | [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lAAPoyCRq0q6TOVQkCOy1ZyG6Ud_r2tKuS0HcGnqiQZUOVJFUzBFWE1aSVlLN0ozR01MUVQ4T0RGNyQlQCN0PWcu)|
+
+**Github**
+
+The root link to our Github page is: https://github.com/OHDSI/ImageWG
