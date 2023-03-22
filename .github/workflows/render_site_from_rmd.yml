@@ -2,7 +2,7 @@ on:
   pull_request:
     types: [opened, edited]
     paths:
-      - 'rmd/**'
+      - '*'
 
 name: render R Markdown files to docs
 
