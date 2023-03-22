@@ -1,5 +1,5 @@
 ---
-title: '<div><img src="images/ohdsi40x40.png"></img> OHDSI Medical Imaging WG </div>'
+title: '<div><img src="images/ohdsi40x40.png"></img> OHDSI Medical Image WG </div>'
 output: html_document
 ---
 
@@ -25,5 +25,3 @@ To join the MS Teams environment you need to complete two steps:
 **Github**
 
 The root link to our Github page is: https://github.com/OHDSI/ImageWG
-
-test123
