@@ -13,4 +13,4 @@ navbar:
       href: https://github.com/OHDSI/ImageWG
   left:
     - icon: fa-home
-      href: homepage.html
+      href: index.html
