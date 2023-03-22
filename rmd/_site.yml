@@ -7,7 +7,7 @@ output:
     includes:
       in_header: "favicon.html"
 navbar:
-  title: '<div><img src="ohdsi16x16.png"></img> Medical Image WG </div>'
+  title: '<div><img src="images/ohdsi16x16.png"></img> OHDSI Medical Image WG </div>'
   right:
     - icon: fa-github
       href: https://github.com/OHDSI/ImageWG
