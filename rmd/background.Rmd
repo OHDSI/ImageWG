@@ -1,0 +1,53 @@
+---
+title: '<div><img src="images/ohdsi40x40.png"></img>Background</div>'
+output: 
+  html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+# **Problem Space and Goals**
+
+test
+
+
+---
+
+
+
+# **Onramp **
+
+<br>
+
+### OHDSI Scope
+
+- test2
+  - include SOS diagram
+- What OMOP Oncology can do today
+  - Incidence, survival
+  - Treatment practices
+  - Safety
+- What OMOP Oncology cannot do (without outcomes)
+  - Treatment response
+  - Comparative effectiveness
+  - test3
+  
+<br>
+
+### Oncology Use Cases
+  - TODO
+  
+<br>
+
+### Data Sources
+- what data sources do I need to get oncology value from OMOP
+	- Required
+	- Optional
+
+<br>
+
+### test4
+  - Manual curation
+  - NLP

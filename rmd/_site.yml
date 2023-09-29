@@ -14,3 +14,7 @@ navbar:
   left:
     - icon: fa-home
       href: index.html
+    - text: "Background"
+      icon: fa-info-circle
+      href: background.html
+      
