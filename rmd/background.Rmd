@@ -25,15 +25,11 @@ test
 
 - test2
   - include SOS diagram
-- What OMOP Oncology can do today
+- medical image
   - Incidence, survival
   - Treatment practices
   - Safety
-- What OMOP Oncology cannot do (without outcomes)
-  - Treatment response
-  - Comparative effectiveness
-  - test3
-  
+
 <br>
 
 ### Oncology Use Cases
@@ -42,7 +38,7 @@ test
 <br>
 
 ### Data Sources
-- what data sources do I need to get oncology value from OMOP
+- add
 	- Required
 	- Optional
 
