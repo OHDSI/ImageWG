@@ -1,0 +1,65 @@
+﻿cdmTableName,cdmFieldName,isRequired,cdmDatatype,userGuidance
+image_occurrence,image_occurrence_id,Yes,integer ,The unique key is given to an imaging study record (often referred to as the accession number or imaging order number)  
+image_occurrence,person_id,Yes,integer,The person_id of the Person for whom the procedure is recorded. This can be a system-generated code or adopted from original source.
+image_occurrence,procedure_occurrence_id,Yes,integer ,The unique key is given to a procedure record for a person. Link to the Procedure_occurrence table.
+image_occurrence,visit_occurrence_id,No,integer,The unique key is given to the visit record for a person. Link to the Visit_occurrence table.
+image_occurrence,anatomic_site_concept_id,No,integer,Anatomical location of the imaging procedure by the medical acquisition device (gross anatomy). It maps the ANATOMIC_SITE_SOURCE_VALUE to a Standard Concept in the Spec Anatomic Site domain. This should be coded at the lowest level of granularity.
+image_occurrence,wadors_uri ,No ,varchar (max) ,A Web Access to DICOM Objects via Restful Web Services Uniform Resource Identifier on study level.
+image_occurrence,local_path,Yes,varchar (max),"Universal Naming Convention (UNC) path to the folder containing the image object file access via a storage block access protocol. (e.g., \\Server\Directory)"
+image_occurrence,image_occurrence_date ,Yes,date ,The date the imaging procedure occurred. 
+image_occurrence,image_study_UID ,Yes,varchar (250) ,DICOM Study UID 
+image_occurrence,image_series_UID ,Yes ,varchar (250) ,DICOM Series UID
+image_occurrence,modality ,Yes ,varchar (250) ,"DICOM-defined value (e.g., US, CT, MR, PT, DR, CR, NM)"
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
