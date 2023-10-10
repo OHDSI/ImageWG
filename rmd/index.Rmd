@@ -1,7 +1,14 @@
 ---
 title: '<div><img src="images/ohdsi40x40.png"></img> OHDSI Medical Image WG </div>'
-output: html_document
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
 ---
+
+
 
 ## **Mission**
 
