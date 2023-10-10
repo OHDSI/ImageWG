@@ -11,7 +11,7 @@
 
 
 
-<title>Background</title>
+<title> Tooling</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -223,6 +226,75 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
 
 </head>
 
@@ -230,6 +302,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -283,35 +365,69 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><img src="images/ohdsi40x40.png"></img>Background</h1>
+<h1 class="title toc-ignore"><img src="images/ohdsi40x40.png"></img>
+Tooling</h1>
 
 </div>
 
 
-<p>The Medical Imaging Working Group (MI WG) for the OHDSI community was
-formed in 2021, comprised of imaging research scientists and
-observational health researchers familiar with OMOP CDM. The working
-group evaluated standard vocabularies, defined fields containing key
-imaging events, and identified limitations of the model. The working
-group started with the R-CDM in the development of the medical imaging
-extension. Imaging researchers across the field were consulted to gather
-requirements and gain insights into the structure and usability of the
-proposed model. The principal clinical use case focused on longitudinal
-tracking of multiple lung nodules. Important attributes included CT
-acquisition parameters, nodule diameter, location, density, shape, and
-other phenotypes. A prototype using CT lung nodules was developed and
-demonstrated at the 2023 Society of Imaging Informatics in Medicine
-(SIIM) conference Hackathon.</p>
-<p><br> <br></p>
-<hr />
-<p>Citation: Park C, You SC, Jeon H, Jeong CW, Choi JW, Park RW.
-Development and Validation of the Radiology Common Data Model (R-CDM)
-for the International Standardization of Medical Imaging Data. Yonsei
-Med J. 2022;63(Suppl):S74. <a href="doi:10.3349/ymj.2022.63.S74"
-class="uri">doi:10.3349/ymj.2022.63.S74</a></p>
+<p><br></p>
+<div id="applications" class="section level1">
+<h1><strong>Applications</strong></h1>
+<p><em>TODO: Brief overview </em></p>
+<p>TODO</p>
+<div id="etl" class="section level2">
+<h2><strong>ETL</strong></h2>
+<div id="tumor-registry" class="section level3">
+<h3>Tumor Registry</h3>
+<ul>
+<li>TODO <br></li>
+</ul>
+</div>
+<div id="ehr-data" class="section level3">
+<h3>EHR Data</h3>
+<ul>
+<li>TODO <br></li>
+</ul>
+</div>
+</div>
+<div id="genomics" class="section level2">
+<h2><strong>Genomics</strong></h2>
+<ul>
+<li>TODO <br></li>
+</ul>
+<div id="koios" class="section level3">
+<h3>KOIOS</h3>
+<p>Github: <a href="https://github.com/OHDSI/Koios">OHDSI/KOIOS</a></p>
+<p>KOIOS is a tool developed by Odysseus Data Services Inc that allows
+you to find matching and missing concepts in OMOP Genomic Vocabulary for
+most types of raw patient-level genomic data. The current tool
+functionality allows to extract relevant variant information from VCF
+files, or detect HGVS in any TXT/CSV file. In the next step, KOIOS finds
+corresponding HGVS references in ClinGen for each variant, and maps the
+results to OMOP Genomic vocabulary. Extracted HGVS references can be
+used as either synonyms for the existing OMOP Genomic concepts, or as
+new entities.</p>
+</div>
+</div>
+<div id="regimen-derivation" class="section level2">
+<h2><strong>Regimen Derivation</strong></h2>
+<ul>
+<li>TODO <br></li>
+</ul>
+</div>
+<div id="episode-derivation" class="section level2">
+<h2><strong>Episode Derivation</strong></h2>
+<ul>
+<li>TODO <br></li>
+</ul>
+</div>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -344,6 +460,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
