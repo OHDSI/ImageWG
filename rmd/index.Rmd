@@ -5,13 +5,36 @@ output: html_document
 
 ## **Mission**
 
-The OHDSI Image Working Group aims to provide a foundation for representing medical imaging data within the OMOP CDM
+The OHDSI Medical Imaging Working Group aims to represent medical imaging data in the OMOP CDM. The differing formats between EHR and imaging data have led to difficult to conduct research across these data sources. Researchers using EHR data often have access to the disease burden or patient outcomes common in medical records, while imaging researchers can study biomarkers and granular changes in diseases that are provided by medical imaging. Combining these sources will enable more holistic reproducible research. Our aim is to link algorithmically generated measurements into the OMOP data model to harness these deeper phenotypes with the outcome measures tracked in the EHR. 
+
+
+We propose two new tables to the OMOP CDM, the medical imaging extension model. Park et al. (2022) developed the first OMOP imaging extension for radiological imaging studies (R-CDM). We are expanding the R-CDM to MI-CDM to encompass diverse medical specialties and enhance tracking provenance of the DICOM images and features.
+
+
+Citation: Park C, You SC, Jeon H, Jeong CW, Choi JW, Park RW. Development and Validation of the Radiology Common Data Model (R-CDM) for the International Standardization of Medical Imaging Data. Yonsei Med J. 2022;63(Suppl):S74. doi:10.3349/ymj.2022.63.S74
+
+
+![](https://github.com/OHDSI/ImageWG/assets/84831718/e59d4692-4e41-43b2-89f7-40e9dbee74d6)
+
+
+---
+
+## **Important links**
+
+[Medical Imaging Working Group 2023 OKR](https://www.ohdsi.org/wp-content/uploads/2023/02/OHDSI_Imaging_2023_02.pdf)
+
+[Github Page](https://github.com/OHDSI/ImageWG/)
+
+Paper on medical imaging OMOP CDM extension coming soon.
+
 
 ---
 
 ## **Get Involved**
 
-We communicate and coordinate through the OHDSI MS Teams environment and Github. 
+We communicate and coordinate through the OHDSI MS Teams environment and Github.
+
+We have working group meeting every 2 weeks at 7 PM ET and 7 AM ET alternatively. We welcome you to join us.
 
 **MS Teams**
 

@@ -19,12 +19,12 @@ navbar:
       href: background.html
     - text: " Approach"
       icon: fa-cogs
-      menu:
-        - text: " Model"
-          href: model.html
-          icon: fa-sitemap
-        - text: " Conventions"
-          icon: fa-gavel
-          href: conventions.html
-      
+      href: Approach.html
+      # menu:
+      #   - text: " Model"
+      #     href: model.html
+      #     icon: fa-sitemap
+      #   - text: " Conventions"
+      #     icon: fa-gavel
+      #     href: conventions.html
       

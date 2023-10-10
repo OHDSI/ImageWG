@@ -1,49 +1,16 @@
 ---
 title: '<div><img src="images/ohdsi40x40.png"></img>Background</div>'
-output: 
-  html_document:
-        toc: TRUE
-        toc_depth: 3
-        toc_float:
-          collapsed: false
+output: html_document
 ---
+The Medical Imaging Working Group (MI WG) for the OHDSI community was formed in 2021, comprised of imaging research scientists and observational health researchers familiar with OMOP CDM. The working group evaluated standard vocabularies, defined fields containing key imaging events, and identified limitations of the model. The working group started with the R-CDM in the development of the medical imaging extension. Imaging researchers across the field were consulted to gather requirements and gain insights into the structure and usability of the proposed model. The principal clinical use case focused on longitudinal tracking of multiple lung nodules. Important attributes included CT acquisition parameters, nodule diameter, location, density, shape, and other phenotypes. A prototype using CT lung nodules was developed and demonstrated at the 2023 Society of Imaging Informatics in Medicine (SIIM) conference Hackathon.
 
-# **Problem Space and Goals**
 
-test
+<br>
+<br>
 
 
 ---
 
+Citation: Park C, You SC, Jeon H, Jeong CW, Choi JW, Park RW. Development and Validation of the Radiology Common Data Model (R-CDM) for the International Standardization of Medical Imaging Data. Yonsei Med J. 2022;63(Suppl):S74. doi:10.3349/ymj.2022.63.S74 
 
 
-# **Onramp **
-
-<br>
-
-### OHDSI Scope
-
-- test2
-  - include SOS diagram
-- medical image
-  - Incidence, survival
-  - Treatment practices
-  - Safety
-
-<br>
-
-### Oncology Use Cases
-  - TODO
-  
-<br>
-
-### Data Sources
-- add
-	- Required
-	- Optional
-
-<br>
-
-### test4
-  - Manual curation
-  - NLP

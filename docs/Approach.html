@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Medical Imaging Extension Model</title>
+
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><div><img src="images/ohdsi16x16.png"></img> OHDSI Medical Image WG </div></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="background.html">
+    <span class="fa fa-info-circle"></span>
+     
+     Background
+  </a>
+</li>
+<li>
+  <a href="Approach.html">
+    <span class="fa fa-cogs"></span>
+     
+     Approach
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/OHDSI/ImageWG">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore"><img src="images/ohdsi40x40.png"></img>Medical
+Imaging Extension Model</h1>
+
+</div>
+
+
+<p><br> The medical imaging extension proposal represents imaging
+characteristics through two new tables—Image_occurrence and
+Image_features.</p>
+<p><br></p>
+<div id="representation" class="section level2">
+<h2><strong>Representation</strong></h2>
+<p><br></p>
+<div id="image_occurrence" class="section level3">
+<h3>Image_occurrence</h3>
+<p><br> Table Description</p>
+<p>The Image_occurrence table describes imaging events and provides data
+lineage to the imaging study stored in DICOM format. <br></p>
+<p><br> User Guide</p>
+<p>Each row in Image_occurrence represents a collection of images
+acquired on an imaging modality using a contiguous imaging technique.
+This is referred to as a DICOM series. Each DICOM series can be an
+independent modality and acquisition technique grouped within a DICOM
+study (e.g., PET/CT scan).</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="7%" />
+<col width="13%" />
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">cdmTableName</th>
+<th align="left">cdmFieldName</th>
+<th align="left">isRequired</th>
+<th align="left">cdmDatatype</th>
+<th align="left">userGuidance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">image_occurrence</td>
+<td align="left">image_occurrence_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The unique key is given to an imaging study record
+(often referred to as the accession number or imaging order number)</td>
+</tr>
+<tr class="even">
+<td align="left">image_occurrence</td>
+<td align="left">person_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The person_id of the Person for whom the procedure is
+recorded. This can be a system-generated code or adopted from original
+source.</td>
+</tr>
+<tr class="odd">
+<td align="left">image_occurrence</td>
+<td align="left">procedure_occurrence_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The unique key is given to a procedure record for a
+person. Link to the Procedure_occurrence table.</td>
+</tr>
+<tr class="even">
+<td align="left">image_occurrence</td>
+<td align="left">visit_occurrence_id</td>
+<td align="left">No</td>
+<td align="left">integer</td>
+<td align="left">The unique key is given to the visit record for a
+person. Link to the Visit_occurrence table.</td>
+</tr>
+<tr class="odd">
+<td align="left">image_occurrence</td>
+<td align="left">anatomic_site_concept_id</td>
+<td align="left">No</td>
+<td align="left">integer</td>
+<td align="left">Anatomical location of the imaging procedure by the
+medical acquisition device (gross anatomy). It maps the
+ANATOMIC_SITE_SOURCE_VALUE to a Standard Concept in the Spec Anatomic
+Site domain. This should be coded at the lowest level of
+granularity.</td>
+</tr>
+<tr class="even">
+<td align="left">image_occurrence</td>
+<td align="left">wadors_uri</td>
+<td align="left">No</td>
+<td align="left">varchar (max)</td>
+<td align="left">A Web Access to DICOM Objects via Restful Web Services
+Uniform Resource Identifier on study level.</td>
+</tr>
+<tr class="odd">
+<td align="left">image_occurrence</td>
+<td align="left">local_path</td>
+<td align="left">Yes</td>
+<td align="left">varchar (max)</td>
+<td align="left">“Universal Naming Convention (UNC) path to the folder
+containing the image object file access via a storage block access
+protocol. (e.g., \Server)”</td>
+</tr>
+<tr class="even">
+<td align="left">image_occurrence</td>
+<td align="left">image_occurrence_date</td>
+<td align="left">Yes</td>
+<td align="left">date</td>
+<td align="left">The date the imaging procedure occurred.</td>
+</tr>
+<tr class="odd">
+<td align="left">image_occurrence</td>
+<td align="left">image_study_UID</td>
+<td align="left">Yes</td>
+<td align="left">varchar (250)</td>
+<td align="left">DICOM Study UID</td>
+</tr>
+<tr class="even">
+<td align="left">image_occurrence</td>
+<td align="left">image_series_UID</td>
+<td align="left">Yes</td>
+<td align="left">varchar (250)</td>
+<td align="left">DICOM Series UID</td>
+</tr>
+<tr class="odd">
+<td align="left">image_occurrence</td>
+<td align="left">modality</td>
+<td align="left">Yes</td>
+<td align="left">varchar (250)</td>
+<td align="left">“DICOM-defined value (e.g., US, CT, MR, PT, DR, CR,
+NM)”</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="image_feature" class="section level3">
+<h3>Image_feature</h3>
+<p><br> Table Description</p>
+<p>Imaging features are comprised of segmentation algorithm results
+executed on the images, image acquisition parameters, and structured
+radiology reports. The Image_feature table describes the characteristics
+of the images and their provenance.</p>
+<p><br></p>
+<p>User Guide</p>
+<p>Each row will contain a uniquely identified feature with links to the
+source imaging as well as the clinical domain table the feature is
+located in. The image_feature_type_concept_id will describe the method
+used to create that feature (e.g., machine learning algorithm, DICOM
+structured report). Image acquisition parameters will also be stored in
+the clinical domain tables and linked to the source images through the
+image feature table. This allows the cardinality to include multiple
+acquisition parameters as well as the benefit of being able to query
+them with existing tooling in the OHDSI platform.</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="7%" />
+<col width="13%" />
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">cdmTableName</th>
+<th align="left">cdmFieldName</th>
+<th align="left">isRequired</th>
+<th align="left">cdmDatatype</th>
+<th align="left">userGuidance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">image_feature</td>
+<td align="left">image_feature_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The unique key is given to an imaging feature.</td>
+</tr>
+<tr class="even">
+<td align="left">image_feature</td>
+<td align="left">person_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The person_id of the Person table for whom the the
+procedure is recorded. This can be a system-generated code or adopted
+from original source.</td>
+</tr>
+<tr class="odd">
+<td align="left">image_feature</td>
+<td align="left">image_occurrence_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The unique key of the Image_occurrence table.</td>
+</tr>
+<tr class="even">
+<td align="left">image_feature</td>
+<td align="left">table_concept_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">“The concept_id of the domain table that feature is
+stored in Measurement, Observation, etc. This concept should be used
+with the table_row_id.”</td>
+</tr>
+<tr class="odd">
+<td align="left">image_feature</td>
+<td align="left">table_row_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">The row_id of the domain table that feature is
+stored.</td>
+</tr>
+<tr class="even">
+<td align="left">image_feature</td>
+<td align="left">image_feature_concept_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">Concept_id of standard vocabulary—often a LOINC or
+RadLex of image features</td>
+</tr>
+<tr class="odd">
+<td align="left">image_feature</td>
+<td align="left">image_feature_type_concept_id</td>
+<td align="left">Yes</td>
+<td align="left">integer</td>
+<td align="left">“This field can be used to determine the provenance of
+the imaging features (e.g., DICOM SR, algorithms used on images)”</td>
+</tr>
+<tr class="even">
+<td align="left">image_feature</td>
+<td align="left">image_finding_concept_id</td>
+<td align="left">No</td>
+<td align="left">integer</td>
+<td align="left">“RadLex or other terms of the groupings of image
+feature (e.g., nodule)”</td>
+</tr>
+<tr class="odd">
+<td align="left">image_feature</td>
+<td align="left">image_finding_id</td>
+<td align="left">No</td>
+<td align="left">integer</td>
+<td align="left">Integer for linking related image features. It should
+not be interpreted as an order of clinical relevance.</td>
+</tr>
+<tr class="even">
+<td align="left">image_feature</td>
+<td align="left">anatomic_site_concept_id</td>
+<td align="left">No</td>
+<td align="left">integer</td>
+<td align="left">This is the site on the body where the feature was
+found. It maps the ANATOMIC_SITE_SOURCE_VALUE to a Standard Concept in
+the Spec Anatomic Site domain.</td>
+</tr>
+<tr class="odd">
+<td align="left">image_feature</td>
+<td align="left">alg_system</td>
+<td align="left">No</td>
+<td align="left">varchar(max)</td>
+<td align="left">“URI of the algorithm that extracted features,
+including version information”</td>
+</tr>
+<tr class="even">
+<td align="left">image_feature</td>
+<td align="left">alg_datetime</td>
+<td align="left">No</td>
+<td align="left">datetime</td>
+<td align="left">The date and time of the algorithm processing.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
