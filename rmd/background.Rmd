@@ -9,8 +9,3 @@ The Medical Imaging Working Group (MI WG) for the OHDSI community was formed in 
 <br>
 
 
----
-
-Citation: Park C, You SC, Jeon H, Jeong CW, Choi JW, Park RW. Development and Validation of the Radiology Common Data Model (R-CDM) for the International Standardization of Medical Imaging Data. Yonsei Med J. 2022;63(Suppl):S74. doi:10.3349/ymj.2022.63.S74 
-
-
