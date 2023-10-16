@@ -11,7 +11,7 @@
 
 
 
-<title>medicine image model</title>
+<title> Populating Oncology Data</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -365,19 +365,41 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><img src="images/ohdsi40x40.png"></img>medicine
-image model</h1>
+<h1 class="title toc-ignore"><img src="images/ohdsi40x40.png"></img>
+Populating Oncology Data</h1>
 
 </div>
 
 
 <p><br></p>
-<div id="representation" class="section level2">
-<h2><strong>Representation</strong></h2>
+<p>There are multiple strategies for populating the Oncology data within
+OMOP:</p>
 <p><br></p>
-<div id="diagnosis" class="section level3">
-<h3>Diagnosis</h3>
-<p>preparing to write information</p>
+<hr />
+<div id="data-population" class="section level1">
+<h1><strong>Data Population</strong></h1>
+<p><br></p>
+<div id="directly-from-tumor-registries" class="section level2">
+<h2>Directly from Tumor Registries:</h2>
+<p>Tumor registries natively capture many of the abstractions and
+detailed modifiers that the Oncology CDM Extension strives to
+instantiate. A standard ETL has been written capable of ETLing
+NAACCR-formatted tumor registry data. See the documentation of the
+NAACCR ETL here</p>
+<p>TODO – ABOVE WILL ME OVERWRITTEN</p>
+<p><br></p>
+</div>
+<div id="directly-from-non-registry-sources" class="section level2">
+<h2>Directly from non-registry sources:</h2>
+<p>TODO – Explanation of mapping to standard concepts and conventions to
+be elaborated on below. Perhaps with links in the conventions
+section</p>
+<p><br></p>
+</div>
+<div id="indirectly-via-algorithmic-derivation-on-top-of-the-omop-cdm"
+class="section level2">
+<h2>Indirectly via Algorithmic Derivation on top of the OMOP CDM:</h2>
+<p>TODO</p>
 </div>
 </div>
 
