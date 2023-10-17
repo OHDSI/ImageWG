@@ -1,0 +1,13 @@
+﻿cdmTableName,cdmFieldName,isRequired,cdmDatatype,userGuidance
+image_feature,image_feature_id,Yes ,integer ,The unique key is given to an imaging feature. 
+image_feature,person_id,Yes ,integer,The person_id of the Person table for whom the the procedure is recorded. This can be a system-generated code or adopted from original source.
+image_feature,image_occurrence_id,Yes,integer,The unique key of the Image_occurrence table.
+image_feature,table_concept_id,Yes,integer,"The concept_id of the domain table that feature is stored in Measurement, Observation, etc. This concept should be used with the table_row_id."
+image_feature,table_row_id,Yes,integer,The row_id of the domain table that feature is stored.
+image_feature,image_feature_concept_id,Yes,integer,Concept_id of standard vocabulary—often a LOINC or RadLex of image features
+image_feature,image_feature_type_concept_id,Yes,integer ,"This field can be used to determine the provenance of the imaging features (e.g., DICOM SR, algorithms used on images)"
+image_feature,image_finding_concept_id,No,integer,"RadLex or other terms of the groupings of image feature (e.g., nodule)"
+image_feature,image_finding_id,No,integer ,Integer for linking related image features. It should not be interpreted as an order of clinical relevance.
+image_feature,anatomic_site_concept_id,No,integer ,This is the site on the body where the feature was found. It maps the ANATOMIC_SITE_SOURCE_VALUE to a Standard Concept in the Spec Anatomic Site domain.
+image_feature,alg_system ,No ,varchar(max),"URI of the algorithm that extracted features, including version information"
+image_feature,alg_datetime ,No ,datetime ,The date and time of the algorithm processing.

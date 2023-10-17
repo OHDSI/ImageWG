@@ -1,0 +1,18 @@
+---
+title: '<div><img src="images/ohdsi40x40.png"></img>medicine image model</div>'
+output: 
+  html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+<br>
+
+## **Representation**
+
+<br>
+
+### Diagnosis
+
+preparing to write information

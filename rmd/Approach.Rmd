@@ -1,0 +1,102 @@
+---
+title: '<div><img src="images/ohdsi40x40.png"></img>Medical Imaging Extension Model</div>'
+output: 
+  html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+<br>
+
+The medical imaging extension proposal represents imaging characteristics through two new tables—Image_occurrence and Image_features. 
+![](https://github.com/jinwooyoon/edi_test/assets/84831718/8be9ce62-9f1b-408f-9af8-687237fd20d1)
+
+<br>
+
+
+
+
+
+![](https://github.com/jinwooyoon/edi_test/assets/84831718/e9df1b32-e57a-4bc0-ba6f-74afde55bdf9)
+
+
+<br>
+
+## **Representation**
+
+
+
+
+## **Schema**
+
+### Image_occurrence  
+
+<br>
+Table Description  
+
+The Image_occurrence table describes imaging events and provides data lineage to the imaging study stored in DICOM format. 
+<br>
+
+<br>
+User Guide  
+
+Each row in Image_occurrence represents a collection of images acquired on an imaging modality using a contiguous imaging technique. This is referred to as a DICOM series. Each DICOM series can be an independent modality and acquisition technique grouped within a DICOM study (e.g., PET/CT scan).
+
+
+<br>
+
+cdmTableName|cdmFieldName|isRequired|cdmDatatype|userGuidance
+:-------------------|:-----------------------|:--------|:---------------|:------------------------------------------------
+|image_occurrence|image_occurrence_id|Yes|integer|The unique key is given to an imaging study record (often referred to as the accession number or imaging order number)|  
+|image_occurrence|person_id|Yes|integer|The person_id of the Person for whom the procedure is recorded. This can be a system-generated code or adopted from original source.|
+|image_occurrence|procedure_occurrence_id|Yes|integer|The unique key is given to a procedure record for a person. Link to the Procedure_occurrence table.|
+|image_occurrence|visit_occurrence_id|No|integer|The unique key is given to the visit record for a person. Link to the Visit_occurrence table.|
+|image_occurrence|anatomic_site_concept_id|No|integer|Anatomical location of the imaging procedure by the medical acquisition device (gross anatomy). It maps the ANATOMIC_SITE_SOURCE_VALUE to a Standard Concept in the Spec Anatomic Site domain. This should be coded at the lowest level of granularity.|
+|image_occurrence|wadors_uri|No|varchar (max)|A Web Access to DICOM Objects via Restful Web Services Uniform Resource Identifier on study level.|
+|image_occurrence|local_path|Yes|varchar (max)|"Universal Naming Convention (UNC) path to the folder containing the image object file access via a storage block access protocol. (e.g., \\Server\Directory)"|
+|image_occurrence|image_occurrence_date|Yes|date|The date the imaging procedure occurred.|
+|image_occurrence|image_study_UID|Yes|varchar (250)|DICOM Study UID|
+|image_occurrence|image_series_UID|Yes|varchar (250)|DICOM Series UID|
+|image_occurrence|modality|Yes|varchar (250)|"DICOM-defined value (e.g., US, CT, MR, PT, DR, CR, NM)"|
+
+
+
+
+<br>
+
+
+
+
+### Image_feature
+<br>
+Table Description  
+
+Imaging features are comprised of segmentation algorithm results executed on the images, image acquisition parameters, and structured radiology reports. The Image_feature table describes the characteristics of the images and their provenance.
+
+<br>
+
+User Guide  
+
+Each row will contain a uniquely identified feature with links to the source imaging as well as the clinical domain table the feature is located in. The image_feature_type_concept_id will describe the method used to create that feature (e.g., machine learning algorithm, DICOM structured report). Image acquisition parameters will also be stored in the clinical domain tables and linked to the source images through the image feature table. This allows the cardinality to include multiple acquisition parameters as well as the benefit of being able to query them with existing tooling in the OHDSI platform. 
+
+
+
+<br>
+
+
+cdmTableName|cdmFieldName|isRequired|cdmDatatype|userGuidance
+:-------------------|:-----------------------|:--------|:---------------|:------------------------------------------------
+|image_feature|image_feature_id|Yes|integer|The unique key is given to an imaging feature.|
+|image_feature|person_id|Yes|integer|The person_id of the Person table for whom the the procedure is recorded. This can be a system-generated code or adopted from original source.|
+|image_feature|image_occurrence_id|Yes|integer|The unique key of the Image_occurrence table.|
+|image_feature|table_concept_id|Yes|integer|"The concept_id of the domain table that feature is stored in Measurement, Observation, etc. This concept should be used with the table_row_id."|
+|image_feature|table_row_id|Yes|integer|The row_id of the domain table that feature is stored.|
+|image_feature|image_feature_concept_id|Yes|integer|Concept_id of standard vocabulary—often a LOINC or RadLex of image features|
+|image_feature|image_feature_type_concept_id|Yes|integer|"This field can be used to determine the provenance of the imaging features (e.g., DICOM SR, algorithms used on images)"|
+|image_feature|image_finding_concept_id|No|integer|"RadLex or other terms of the groupings of image feature (e.g., nodule)"|
+|image_feature|image_finding_id|No|integer|Integer for linking related image features. It should not be interpreted as an order of clinical relevance.|
+|image_feature|anatomic_site_concept_id|No|integer|This is the site on the body where the feature was found. It maps the ANATOMIC_SITE_SOURCE_VALUE to a Standard Concept in the Spec Anatomic Site domain.|
+|image_feature|alg_system|No|varchar(max)|"URI of the algorithm that extracted features, including version information"|
+|image_feature|alg_datetime|No|datetime|The date and time of the algorithm processing.|

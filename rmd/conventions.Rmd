@@ -1,0 +1,40 @@
+---
+title: '<div><img src="images/ohdsi40x40.png"></img>Oncology Conventions</div>'
+output: 
+  html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+
+Conventions
+
+*TODO: Brief overview of the use and intent of these conventions*
+
+---
+
+<br>
+
+# **Diagnostic**
+
+<br>
+
+## <img src="images/green-check.png"></img> Primary Diagnosis
+
+(Placeholder)
+
+test
+<br>
+
+---
+
+## **Condition Modifiers**
+
+---
+
+#### Overview of Condition Modifiers ####
+
+
+	
