@@ -10,23 +10,17 @@ output:
 
 <br>
 
-The medical imaging extension proposal represents imaging characteristics through two new tables—Image_occurrence and Image_features. 
-![](https://github.com/jinwooyoon/edi_test/assets/84831718/8be9ce62-9f1b-408f-9af8-687237fd20d1)
-
-<br>
-
-
-
-
-
-![](https://github.com/jinwooyoon/edi_test/assets/84831718/e9df1b32-e57a-4bc0-ba6f-74afde55bdf9)
-
-
-<br>
-
 ## **Representation**
 
 
+The medical imaging extension proposal represents imaging characteristics through two new tables—Image_occurrence and Image_features. 
+![](https://github.com/jinwooyoon/edi_test/assets/84831718/8be9ce62-9f1b-408f-9af8-687237fd20d1)
+
+
+![](https://github.com/jinwooyoon/ImageWG/assets/84831718/223c1512-2124-400d-84bb-c054ddbb8d29)
+
+
+<br>
 
 
 ## **Schema**
