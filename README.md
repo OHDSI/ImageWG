@@ -1,13 +1,34 @@
-# Medical Imaging Working Group
+# OHDSI Medical Imaging Working Group
 
-The OHDSI Medical Imaging Working Group, formed in 2021, brings together imaging informaticians, clinical researchers, and observational health scientists to extend the OMOP Common Data Model (CDM) for medical imaging research. The group aims to bridge the gap between electronic health record (EHR) data and medical imaging data, enabling integrated and reproducible multimodal observational studies.
+> Extending the OMOP Common Data Model to integrate medical imaging data for reproducible, multimodal observational research.
 
-To support this, the group developed the Medical Imaging Common Data Model (MI-CDM), a structural extension of the OMOP CDM that introduces two new tables—Image_occurrence and Image_feature—to represent imaging studies, acquisition metadata, and derived imaging features, while preserving provenance and linkage to clinical data. This work builds upon earlier efforts such as the Radiology Common Data Model (R-CDM), expanding beyond radiology to support diverse imaging domains.
+The group, formed in 2021, brings together imaging informaticians, clinical researchers, and observational health scientists. We developed the **Medical Imaging Common Data Model (MI-CDM)** — a structural extension of OMOP CDM introducing two new tables (`Image_occurrence`, `Image_feature`) to represent imaging studies, acquisition metadata, and derived features while preserving linkage to clinical data.
 
-Building on this structural foundation, the group has explored semantic standardization through incorporation of the DICOM standard into the OMOP vocabulary, enabling consistent representation of imaging acquisition parameters and metadata. Additional imaging-specific terminologies, such as RadLex, are under consideration for future integration.
+---
 
-The development has been guided by key clinical use cases, including longitudinal tracking of imaging findings such as lung nodules. Important attributes include CT acquisition parameters and imaging phenotypes such as nodule diameter, location, density, and shape. A prototype implementation based on CT lung nodules was developed and demonstrated at the 2023 Society of Imaging Informatics in Medicine (SIIM) Hackathon.
+## Quick Links
 
-More recent efforts have extended these concepts to pilot implementations using real-world and research datasets, including brain MRI data (e.g., ADNI), demonstrating the feasibility of integrating imaging metadata with clinical data for scalable multimodal research within the OMOP framework.
+| Resource | Description |
+|---|---|
+| [Website](https://ohdsi.github.io/ImageWG/) | Official WG documentation and conventions |
+| [GitHub Repository](https://github.com/OHDSI/ImageWG/) | Source code, issues, and proposals |
+| [2026 OKR](https://www.ohdsi.org/wp-content/uploads/2026/03/Imaging-2026.pdf) | Working group objectives and key results |
+| [References](https://github.com/OHDSI/ImageWG/wiki/References-to-relevant-journal-articles) | Relevant journal articles |
+| [DICOM2OMOP Demo](https://github.com/paulnagy/DICOM2OMOP) | Implementation demonstration |
 
-Please check our [Page](https://ohdsi.github.io/ImageWG/index.html) for more information.
+---
+
+## Join the Working Group
+
+Meetings are held **every 2 weeks on Wednesdays** — alternating between **7 PM ET** and **7 AM ET**.
+
+| Step | Action | Link |
+|---|---|---|
+| 1 | Sign up for an OHDSI MS Teams account | [Register here](https://forms.office.com/Pages/ResponsePage.aspx?id=lAAPoyCRq0q6TOVQkCOy1ZyG6Ud_r2tKuS0HcGnqiQZUQ05MOU9BSzEwOThZVjNQVVFGTDNZRENONiQlQCN0PWcu) |
+| 2 | Join the Imaging channel (select "Image" in the form) | [Register here](https://forms.office.com/Pages/ResponsePage.aspx?id=lAAPoyCRq0q6TOVQkCOy1ZyG6Ud_r2tKuS0HcGnqiQZUOVJFUzBFWE1aSVlLN0ozR01MUVQ4T0RGNyQlQCN0PWcu) |
+
+---
+
+## About MI-CDM
+
+Building on the Radiology Common Data Model (R-CDM) by Park et al. (2022), MI-CDM expands imaging data representation beyond radiology to support diverse imaging domains including brain MRI (ADNI), CT lung nodules, and more. It incorporates DICOM standard vocabulary into OMOP and is evaluating additional terminologies such as RadLex.
