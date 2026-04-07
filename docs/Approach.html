@@ -376,7 +376,7 @@ Imaging Extension Model</h1>
 <h2><strong>Representation</strong></h2>
 <p>The medical imaging extension proposal represents imaging
 characteristics through two new tables—Image_occurrence and
-Image_features. <img
+Image_feature. <img
 src="https://github.com/jinwooyoon/edi_test/assets/84831718/8be9ce62-9f1b-408f-9af8-687237fd20d1" /></p>
 <p><img
 src="https://github.com/OHDSI/ImageWG/assets/84831718/9401804f-e6c8-4964-9a66-12fb7e0cd071" /></p>
@@ -469,7 +469,7 @@ Uniform Resource Identifier on study level.</td>
 <tr class="odd">
 <td align="left">image_occurrence</td>
 <td align="left">local_path</td>
-<td align="left">Yes</td>
+<td align="left">No</td>
 <td align="left">varchar (max)</td>
 <td align="left">“Universal Naming Convention (UNC) path to the folder
 containing the image object file access via a storage block access
@@ -497,12 +497,11 @@ protocol. (e.g., \Server)”</td>
 <td align="left">DICOM Series UID</td>
 </tr>
 <tr class="odd">
-<td align="left">image_occurrence</td>
-<td align="left">modality</td>
-<td align="left">Yes</td>
-<td align="left">varchar (250)</td>
-<td align="left">“DICOM-defined value (e.g., US, CT, MR, PT, DR, CR,
-NM)”</td>
+<td align=”left”>image_occurrence</td>
+<td align=”left”>modality_concept_id</td>
+<td align=”left”>Yes</td>
+<td align=”left”>integer</td>
+<td align=”left”>The concept_id of the OMOP standard concept corresponding to the DICOM-defined modality value (e.g., US, CT, MR, PT, DR, CR, NM).</td>
 </tr>
 </tbody>
 </table>
@@ -569,21 +568,18 @@ from original source.</td>
 <td align="left">The unique key of the Image_occurrence table.</td>
 </tr>
 <tr class="even">
-<td align="left">image_feature</td>
-<td align="left">table_concept_id</td>
-<td align="left">Yes</td>
-<td align="left">integer</td>
-<td align="left">“The concept_id of the domain table that feature is
-stored in Measurement, Observation, etc. This concept should be used
-with the table_row_id.”</td>
+<td align=”left”>image_feature</td>
+<td align=”left”>image_feature_event_field_concept_id</td>
+<td align=”left”>No</td>
+<td align=”left”>integer</td>
+<td align=”left”>The concept_id of the domain table in which the feature is stored (e.g., Measurement, Observation). This concept should be used together with the image_feature_event_id.</td>
 </tr>
-<tr class="odd">
-<td align="left">image_feature</td>
-<td align="left">table_row_id</td>
-<td align="left">Yes</td>
-<td align="left">integer</td>
-<td align="left">The row_id of the domain table that feature is
-stored.</td>
+<tr class=”odd”>
+<td align=”left”>image_feature</td>
+<td align=”left”>image_feature_event_id</td>
+<td align=”left”>No</td>
+<td align=”left”>integer</td>
+<td align=”left”>The primary key id of the record in the domain table in which the feature is stored.</td>
 </tr>
 <tr class="even">
 <td align="left">image_feature</td>

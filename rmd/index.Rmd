@@ -15,7 +15,7 @@ output:
 The OHDSI Medical Imaging Working Group aims to represent medical imaging data in the OMOP CDM. The differing formats between EHR and imaging data have led to difficult to conduct research across these data sources. Researchers using EHR data often have access to the disease burden or patient outcomes common in medical records, while imaging researchers can study biomarkers and granular changes in diseases that are provided by medical imaging. Combining these sources will enable more holistic reproducible research. Our aim is to link algorithmically generated measurements into the OMOP data model to harness these deeper phenotypes with the outcome measures tracked in the EHR. 
 
 
-We propose two new tables to the OMOP CDM, the medical imaging extension model. Park et al. (2022) developed the first OMOP imaging extension for radiological imaging studies (R-CDM). We are expanding the R-CDM to MI-CDM to encompass diverse medical specialties and enhance tracking provenance of the DICOM images and features.
+We proposed the Medical Imaging Common Data Model (MI-CDM), a structural extension of OMOP CDM that introduces two new tables—Image_occurrence and Image_feature—to represent imaging studies, acquisition metadata, and derived imaging features, while preserving provenance and linkage to clinical data. This work builds upon earlier efforts such as the Radiology Common Data Model (R-CDM) developed by Park et al. (2022), to encompass diverse medical specialties and enhance tracking provenance of the DICOM images and features.
 
 
 
@@ -24,11 +24,15 @@ We propose two new tables to the OMOP CDM, the medical imaging extension model. 
 
 ## **Important links**
 
-[Medical Imaging Working Group 2023 OKR](https://www.ohdsi.org/wp-content/uploads/2023/02/OHDSI_Imaging_2023_02.pdf)
+[ImageWG Github Page](https://github.com/OHDSI/ImageWG/)
 
-[Github Page](https://github.com/OHDSI/ImageWG/)
+[Medical Imaging Working Group 2026 OKR](https://www.ohdsi.org/wp-content/uploads/2026/03/Imaging-2026.pdf)
 
-Paper on medical imaging OMOP CDM extension coming soon.
+[Relevant journal articles](https://github.com/OHDSI/ImageWG/wiki/References-to-relevant-journal-articles)
+
+[DICOM to OMOP implementation demonstration](https://github.com/paulnagy/DICOM2OMOP)
+
+
 
 
 ---
@@ -37,7 +41,7 @@ Paper on medical imaging OMOP CDM extension coming soon.
 
 We communicate and coordinate through the OHDSI MS Teams environment and Github.
 
-We have working group meeting every 2 weeks at 7 PM ET and 7 AM ET alternatively. We welcome you to join us.
+We have working group meeting every 2 weeks on Wednesdays at 7 PM ET and 7 AM ET alternatively. We welcome you to join us.
 
 **MS Teams**
 

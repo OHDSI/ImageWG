@@ -289,20 +289,11 @@ $(document).ready(function () {
 
 
 <p><br></p>
-<p>The Medical Imaging Working Group (MI WG) for the OHDSI community was
-formed in 2021, comprised of imaging research scientists and
-observational health researchers familiar with OMOP CDM. The working
-group evaluated standard vocabularies, defined fields containing key
-imaging events, and identified limitations of the model. The working
-group started with the R-CDM in the development of the medical imaging
-extension. Imaging researchers across the field were consulted to gather
-requirements and gain insights into the structure and usability of the
-proposed model. The principal clinical use case focused on longitudinal
-tracking of multiple lung nodules. Important attributes included CT
-acquisition parameters, nodule diameter, location, density, shape, and
-other phenotypes. A prototype using CT lung nodules was developed and
-demonstrated at the 2023 Society of Imaging Informatics in Medicine
-(SIIM) conference Hackathon.</p>
+<p>The OHDSI Medical Imaging Working Group (MI WG), formed in 2021, aims to extend the OMOP Common Data Model (CDM) to support medical imaging data for observational research. The group introduced a structural extension to the OMOP CDM with two new tables—Image_occurrence and Image_feature—to represent imaging studies, acquisition metadata, and derived imaging features.</p>
+
+<p>Building on this structural foundation, the group has explored semantic standardization by incorporating the DICOM standard into the OMOP vocabulary, enabling consistent representation of imaging acquisition parameters and metadata. Additional imaging terminologies, such as RadLex, are under consideration for future integration.</p>
+
+<p>Initial use cases have focused on longitudinal tracking of imaging findings, particularly lung nodules. Key attributes include CT acquisition parameters and imaging phenotypes such as nodule diameter, location, density, and shape. A prototype implementation based on CT lung nodules was developed and demonstrated at the 2023 Society of Imaging Informatics in Medicine (SIIM) Hackathon. Subsequent pilot work has also explored integration with brain MRI datasets (e.g., ADNI), highlighting the feasibility of multimodal research within the OMOP framework.</p>
 
 
 
