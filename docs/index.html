@@ -13,7 +13,7 @@
 
 <title> OHDSI Medical Image WG</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.32/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -35,8 +35,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
 <style type="text/css">
@@ -384,28 +384,36 @@ are provided by medical imaging. Combining these sources will enable
 more holistic reproducible research. Our aim is to link algorithmically
 generated measurements into the OMOP data model to harness these deeper
 phenotypes with the outcome measures tracked in the EHR.</p>
-<p>We propose two new tables to the OMOP CDM, the medical imaging
-extension model. Park et al. (2022) developed the first OMOP imaging
-extension for radiological imaging studies (R-CDM). We are expanding the
-R-CDM to MI-CDM to encompass diverse medical specialties and enhance
+<p>We proposed the Medical Imaging Common Data Model (MI-CDM), a
+structural extension of OMOP CDM that introduces two new
+tables—Image_occurrence and Image_feature—to represent imaging studies,
+acquisition metadata, and derived imaging features, while preserving
+provenance and linkage to clinical data. This work builds upon earlier
+efforts such as the Radiology Common Data Model (R-CDM) developed by
+Park et al. (2022), to encompass diverse medical specialties and enhance
 tracking provenance of the DICOM images and features.</p>
 <hr />
 </div>
 <div id="important-links" class="section level2">
 <h2><strong>Important links</strong></h2>
+<p><a href="https://github.com/OHDSI/ImageWG/">ImageWG Github
+Page</a></p>
 <p><a
-href="https://www.ohdsi.org/wp-content/uploads/2023/02/OHDSI_Imaging_2023_02.pdf">Medical
-Imaging Working Group 2023 OKR</a></p>
-<p><a href="https://github.com/OHDSI/ImageWG/">Github Page</a></p>
-<p>Paper on medical imaging OMOP CDM extension coming soon.</p>
+href="https://www.ohdsi.org/wp-content/uploads/2026/03/Imaging-2026.pdf">Medical
+Imaging Working Group 2026 OKR</a></p>
+<p><a
+href="https://github.com/OHDSI/ImageWG/wiki/References-to-relevant-journal-articles">Relevant
+journal articles</a></p>
+<p><a href="https://github.com/paulnagy/DICOM2OMOP">DICOM to OMOP
+implementation demonstration</a></p>
 <hr />
 </div>
 <div id="get-involved" class="section level2">
 <h2><strong>Get Involved</strong></h2>
 <p>We communicate and coordinate through the OHDSI MS Teams environment
 and Github.</p>
-<p>We have working group meeting every 2 weeks at 7 PM ET and 7 AM ET
-alternatively. We welcome you to join us.</p>
+<p>We have working group meeting every 2 weeks on Wednesdays at 7 PM ET
+and 7 AM ET alternatively. We welcome you to join us.</p>
 <p><strong>MS Teams</strong></p>
 <p>To join the MS Teams environment you need to complete two steps:</p>
 <table>
