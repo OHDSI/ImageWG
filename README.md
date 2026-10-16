@@ -15,6 +15,25 @@ The group, formed in 2021, brings together imaging informaticians, clinical rese
 | [2026 OKR](https://www.ohdsi.org/wp-content/uploads/2026/03/Imaging-2026.pdf) | Working group objectives and key results |
 | [References](https://github.com/OHDSI/ImageWG/wiki/References-to-relevant-journal-articles) | Relevant journal articles |
 | [DICOM2OMOP Demo](https://github.com/paulnagy/DICOM2OMOP) | Implementation demonstration |
+| [OHDSI2026-Tutorial](https://github.com/dr-you-group/OHDSI2026-Tutorial) | Tutorial materials for 2026 ohdsi global symposium |
+
+---
+
+## ImageWG Wiki
+
+The [ImageWG Wiki](https://github.com/OHDSI/ImageWG/wiki) holds the working group's background material and the MI-CDM conventions. Start with the *Medical Imaging Extension Conventions* page: it gives the implementation flowchart and links to each ETL convention.
+
+- [Home](https://github.com/OHDSI/ImageWG/wiki/Home)
+- [Imaging Evidence Network Governance](https://github.com/OHDSI/ImageWG/wiki/Imaging-Evidence-Network-Governance)
+- [DICOM Background](https://github.com/OHDSI/ImageWG/wiki/DICOM-Background)
+- [Medical Imaging Extension Conventions](https://github.com/OHDSI/ImageWG/wiki/Medical-Imaging-Extension-Conventions)
+  - [Convention: Accessing DICOM Headers](https://github.com/OHDSI/ImageWG/wiki/Convention%3A-Accessing-DICOM-Headers)
+  - [Convention: DICOM Attribute lists](https://github.com/OHDSI/ImageWG/wiki/Convention%3A-DICOM-Attribute-lists)
+  - [Convention: ETL DICOM Attributes to OMOP](https://github.com/OHDSI/ImageWG/wiki/Convention%3A-ETL-DICOM-Attributes-to-OMOP)
+  - [Convention: Image Feature ETL Conventions](https://github.com/OHDSI/ImageWG/wiki/Convention%3A-Image-Feature-ETL-Conventions)
+- [Medical Imaging FAQ](https://github.com/OHDSI/ImageWG/wiki/Medical-Imaging-FAQ)
+- [References to relevant journal articles](https://github.com/OHDSI/ImageWG/wiki/References-to-relevant-journal-articles)
+- [Book of OHDSI Chapter on Medical Imaging](https://github.com/OHDSI/ImageWG/wiki/Book-of-OHDSI-Chapter-on-Medical-Imaging)
 
 ---
 
